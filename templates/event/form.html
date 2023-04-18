@@ -12,17 +12,17 @@
           <div class="mb-3">
               <label for="dept" class="form-label">학과</label>
               <input type="text" class="form-control" name="dept" id="dept"
-                    value="{{ form.dept.value|default_if_none:'' }}">
+                    value="{{ form.dept.value|default_if_none:'' }}" placeholder="ex) 기독교학과">
           </div>
           <div class="mb-3">
             <label for="num" class="form-label">학번</label>
             <input type="text" class="form-control" name="num" id="num"
-                  value="{{ form.num.value|default_if_none:'' }}">
+                  value="{{ form.num.value|default_if_none:'' }}" placeholder="18 또는 2018****">
           </div>
           <div class="mb-3">
             <label for="name" class="form-label">이름</label>
             <input type="text" class="form-control" name="name" id="name"
-                  value="{{ form.name.value|default_if_none:'' }}">
+                  value="{{ form.name.value|default_if_none:'' }}" placeholder="류제민">
           </div>
           <div class="mb-3">
             <label for="name" class="form-label">인증 사진</label>
