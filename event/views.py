@@ -13,7 +13,7 @@ def certify(request):
         if form.is_valid():
             event = form.save()
             event.save()
-            return render(request, 'event/thx.html')
+            return render(request, 'event/coupon.html')
         else:
             print(form.errors.as_data())
     return render(request, 'event/form.html', {'form': form})
