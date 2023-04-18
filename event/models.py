@@ -1,8 +1,7 @@
 from django.db import models
 
+
 # Create your models here.
-
-
 class Event(models.Model):
     dept = models.CharField(max_length=20, verbose_name='학과')
     num = models.CharField(max_length=10, verbose_name='학번')

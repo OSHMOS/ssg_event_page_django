@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class='container'>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-2 col-lg-3"></div>
+    <div class="col-12 col-sm-12 col-md-8 col-lg-6">
+      <img src="{% static 'img/coupon.jpg' %}" class="img-fluid mt-3" alt="숭선바 상품 교환권">
+      <div class="mt-3">
+        <small>
+          * 숭선바를 위해 기부 활동에 참여해주신 여러분들 모두에게 감사드립니다!
+        </small>
+      </div>
+      <div class="mt-3">
+        <small>
+          * 정상적으로 인증해주신 분께만 상품을 드리기 위해 인증해주신 사진은 일일이 확인합니다!
+        </small>
+      </div>
+      <div class="mt-3">
+        <small>
+          * 위 사진을 저장해서 5월 15일, 16일 숭선바(숭선영의 선한 바자회)에 오셔서 보여주시길 바랍니다!
+        </small>
+      </div>
+      <a href="{% url 'download' %}" class="btn btn-primary mt-3">교환권 저장하기</a>
+    </div>
+    <div class="col-12 col-sm-12 col-md-2 col-lg-3"></div>
+  </div>
+</div>
+{% endblock %}
