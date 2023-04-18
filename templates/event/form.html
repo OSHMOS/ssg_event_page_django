@@ -1,4 +1,40 @@
-<form method='POST'>
-  {{form.as_p}}
-  <input type='submit' vlaue='제출'>
-</form>
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-3">
+  <div class='row'>
+    <div class="col-12 col-sm-12 col-md-2 col-lg-3"></div>
+    <div class="col-12 col-sm-12 col-md-8 col-lg-6">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <!-- 오류표시 Start -->
+          {% include 'form_errors.html' %}
+          <!-- 오류표시 End -->
+          <div class="mb-3">
+              <label for="dept" class="form-label">학과</label>
+              <input type="text" class="form-control" name="dept" id="dept"
+                    value="{{ form.dept.value|default_if_none:'' }}">
+          </div>
+          <div class="mb-3">
+            <label for="num" class="form-label">학번</label>
+            <input type="text" class="form-control" name="num" id="num"
+                  value="{{ form.num.value|default_if_none:'' }}">
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">이름</label>
+            <input type="text" class="form-control" name="name" id="name"
+                  value="{{ form.name.value|default_if_none:'' }}">
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">인증 사진</label>
+            <input type="file" class="form-control" name="photo" id="photo"
+                  value="{{ form.photo.value|default_if_none:'' }}">
+          </div>
+          <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-primary">제출</button>
+          </div>
+        </form>
+    </div>
+    <div class="col-12 col-sm-12 col-md-2 col-lg-3"></div>
+  </div>
+</div>
+{% endblock %}
