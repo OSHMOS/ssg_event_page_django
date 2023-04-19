@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
 from event.forms import EventForm
-from django.conf import settings
 import os
 
 
@@ -21,11 +19,3 @@ def certify(request):
 
 def coupon(request):
     return render(request, 'event/coupon.html')
-
-
-def download(request):
-    try:
-        with open(os.path.join(settings.BASE_DIR, 'static', 'img', 'coupon.jpg'), 'rb') as f:
-            return HttpResponse(f.read(), content_type='image/jpg')
-    except IOError:
-        return HttpResponseNotFound('<h1>Page not found</h1>')
